@@ -39,7 +39,7 @@ jobs:
     - name: Build, tag, and push Docker image
       env:
         ECR_URI: "240349441235.dkr.ecr.us-east-1.amazonaws.com/workshop-aws"
-        IMAGE_TAG: ${{ github.sha }}
+        IMAGE_TAG: latest,${{ github.sha }}
       run: |
         docker build -t $ECR_URI:$IMAGE_TAG .
         docker push $ECR_URI:$IMAGE_TAG

@@ -5,7 +5,7 @@
     "containerDefinitions": [
         {
             "name": "app-container",
-            "image": "<your-image>:latest",
+            "image": "240349441235.dkr.ecr.us-east-1.amazonaws.com/workshop-aws:latest",
             "cpu": 512,
             "memoryReservation": 512,
             "portMappings": [
