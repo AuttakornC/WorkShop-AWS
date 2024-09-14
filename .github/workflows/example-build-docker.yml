@@ -46,5 +46,5 @@ jobs:
 
     - name: Image digest
       run: |
-        IMAGE_DIGEST=$(docker inspect --format='{{index .RepoDigests 0}}' $ECR_URI:$IMAGE_TAG)
+        IMAGE_DIGEST=$(docker inspect --format='{{index .RepoDigests 0}}' 240349441235.dkr.ecr.us-east-1.amazonaws.com/workshop-aws:${{ github.sha }})
         echo "Docker image pushed: $IMAGE_DIGEST"
