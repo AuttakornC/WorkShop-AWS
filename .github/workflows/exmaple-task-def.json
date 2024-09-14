@@ -18,10 +18,23 @@
             "essential": true,
             "environment": [],
             "mountPoints": [],
-            "volumesFrom": []
+            "volumesFrom": [],
+            "secrets": [
+                
+            ],
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-group": "/ecs/web-app",
+                    "awslogs-region": "us-east-1",
+                    "awslogs-stream-prefix": "ecs"
+                }
+            }
         }
     ],
     "family": "web-app-task-def",
+    "taskRoleArn": "arn:aws:iam::240349441235:role/LabRole",
+    "executionRoleArn": "arn:aws:iam::240349441235:role/LabRole",
     "networkMode": "awsvpc",
     "volumes": [],
     "placementConstraints": [],

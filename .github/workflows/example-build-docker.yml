@@ -39,12 +39,12 @@ jobs:
     - name: Build, tag, and push Docker image
       env:
         ECR_URI: "240349441235.dkr.ecr.us-east-1.amazonaws.com/workshop-aws"
-        IMAGE_TAG: latest,${{ github.sha }}
+        IMAGE_TAG: latest
       run: |
         docker build -t $ECR_URI:$IMAGE_TAG .
         docker push $ECR_URI:$IMAGE_TAG
 
     - name: Image digest
       run: |
-        IMAGE_DIGEST=$(docker inspect --format='{{index .RepoDigests 0}}' 240349441235.dkr.ecr.us-east-1.amazonaws.com/workshop-aws:${{ github.sha }})
+        IMAGE_DIGEST=$(docker inspect --format='{{index .RepoDigests 0}}' 240349441235.dkr.ecr.us-east-1.amazonaws.com/workshop-aws:latest)
         echo "Docker image pushed: $IMAGE_DIGEST"
